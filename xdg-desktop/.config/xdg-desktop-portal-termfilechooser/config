@@ -1,0 +1,5 @@
+[filechooser]
+cmd=/home/kawiggles/.dotfiles/scripts/yazi-wrapper.sh
+default_dir=$HOME
+open_mode=last
+save_mode=suggested

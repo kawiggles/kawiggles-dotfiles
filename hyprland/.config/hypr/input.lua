@@ -1,0 +1,48 @@
+---------------
+---- INPUT ----
+---------------
+
+hl.config({
+    input = {
+        kb_layout = "us",
+        kb_variant = "",
+        kb_model = "",
+        kb_options = "",
+        kb_rules = "",
+
+        follow_mouse = 1,
+        accel_profile = "flat",
+        sensitivity = 0,
+
+        touchpad = {
+            natural_scroll = true,
+            clickfinger_behavior = true,
+        },
+    },
+
+    cursor = {
+        no_hardware_cursors = true,
+    },
+})
+
+------------------
+---- GESTURES ----
+------------------
+
+hl.gesture({
+    fingers = 3,
+    direction = "horizontal",
+    action = "workspace",
+})
+
+hl.gesture({
+    fingers = 3,
+    direction = "pinchin",
+    action = "resize",
+})
+
+hl.gesture({
+    fingers = 3,
+    direction = "pinchout",
+    action = "fullscreen",
+})
