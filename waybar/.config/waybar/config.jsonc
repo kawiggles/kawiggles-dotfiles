@@ -1,0 +1,79 @@
+// -*- mode: jsonc -*-
+[
+    {
+        "name": "primary",
+        "output": "DP-6",
+        "layer": "top",
+        "position": "top",
+        "modules-left": [
+            "tray",
+            "keyboard-state",
+            "pulseaudio",
+            "custom/spotify"
+        ],
+        "modules-center": ["hyprland/workspaces"],
+        "on-sigusr1": "hide",
+        "on-sigusr2": "show",
+
+        "tray": { "spacing": 10 },
+        "keyboard-state": {
+            "capslock": true,
+            "numlock": true,
+            "format": "{name} {icon}",
+            "format-icons": {
+                "locked": "",
+                "unlocked": ""
+            }
+        },
+        "pulseaudio": {
+            "format": "{volume}% {icon}",
+            "format-muted": "",
+            "format-icons": {
+                "headphone": "",
+                "default": ["", "", ""]
+            },
+            "scroll-step": 5,
+            "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        "custom/spotify": {
+            "format": ":  {text}",
+            "return-type": "json",
+            "interval": 2,
+            "on-click": "playerctl -p spotify play-pause",
+            "on-scroll-up": "playerctl -p spotify next",
+            "on-scroll-down": "playerctl -p spotify previous",
+            "exec": "$HOME/.dotfiles/scripts/waybar_scripts/spotify_script.sh"
+        }
+    },
+    {
+        "name": "secondary",
+        "output": "DP-7",
+        "layer": "top",
+        "modules-center": ["hyprland/workspaces"],
+        "modules-right": [
+            "custom/cpu",
+            "custom/gpu",
+            "memory",
+            "clock"
+        ],
+        "on-sigusr1": "show",
+        "on-sigusr2": "hide",
+
+        "custom/cpu": {
+            "exec": "$HOME/.dotfiles/scripts/waybar_scripts/cpu.sh",
+            "format": "{}",
+            "interval": 2,
+            "tooltip": false
+        },
+        "custom/gpu": {
+            "exec": "$HOME/.dotfiles/scripts/waybar_scripts/gpu.sh",
+            "format": "{}",
+            "interval": 2
+        },
+        "memory": { "format": "RAM: {}%" },
+        "clock": {
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+            "format-alt": "{:%m-%d-%Y}"
+        }
+    }
+]
