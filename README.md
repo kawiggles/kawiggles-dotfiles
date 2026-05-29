@@ -74,6 +74,7 @@ There are four main configured applications:
 2. Neovim
 3. Kitty/zsh (shell)
 4. Waybar
+
 Functional configurations for an application are included in the stow packages with the associated application's name. They are to be deployed with `stow`, though the install script performs this function as well. The themes directory is designed to be modular, with only one theme ever symlinked at a time. Each subdirectory for the config of each theme contains only the theme configuration for the major applications. The wallpapers directory is also there as a point of reference. The scripts directory contains all the scripts used by various configuration files. Finally setup contains a modified pacman.conf and a package installer.
 
 ## Install and Manual Setup
