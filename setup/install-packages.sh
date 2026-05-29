@@ -67,6 +67,7 @@ PACMAN_PACKAGES=(
     zsh
     zsh-autosuggestions
     zsh-syntax-highlighting
+    ufw
 )
 
 AUR_PACKAGES=(
@@ -80,3 +81,10 @@ AUR_PACKAGES=(
 
 sudo pacman -S --needed --noconfirm "${PACMAN_PACKAGES[@]}"
 yay -S --needed --noconfirm --answerdiff N --answerclean N "${AUR_PACKAGES[@]}"
+
+stow -t ~ hyprland
+stow -t ~ neovim
+stow -t ~ waybar
+stow -t ~ shell
+
+~/.dotfiles/scripts/change-theme.sh

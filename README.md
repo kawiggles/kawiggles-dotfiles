@@ -1,5 +1,5 @@
 # YAMATO dotfiles
-YAMATO is my desktop computer running arch linux. I went kinda crazy with the customization, and now need a way of ensuring that I can do a proper system restore in case I screw things up in the future, which I probably will. This README is a guide to all the packages I use, their configurations, and the organization of the dotfile repository.
+YAMATO is my desktop computer running Arch Linux. I went kinda crazy with the customization, and now need a way of ensuring that I can do a proper system restore in case I screw things up in the future, which I probably will. This README is a guide to all the packages I use, their configurations, and the organization of the dotfile repository.
 
 ## Tree and Oranization
 ```

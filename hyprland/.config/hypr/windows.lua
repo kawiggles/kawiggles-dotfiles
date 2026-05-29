@@ -42,19 +42,29 @@ hl.window_rule({
     center = false,
 })
 
+--- hl.workspace_rule({ workspace = "1", layout = "lua:columns" })
+
 -----------------
 ---- LAYOUTS ----
 -----------------
 
 hl.layout.register("columns", {
     recalculate = function(ctx)
+        --- Array of arrays, where each array is a column of windows
+        local col_list = {}
+
         local n = #ctx.targets
-        if n == 0 then
-            return
-        end
+        if n == 0 then return end
+
+        local n_cols = (n < 3) and n or 3
+        for i = 1, n_cols do col_list[i] = {} end
 
         for i, target in ipairs(ctx.targets) do
-            target:place(ctx:column(i, n))
+            if i < 4 then
+                target:place(ctx:column(i, n))
+                table.insert(col_list[i], target)
+            else
+            end
         end
     end,
 })
