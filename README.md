@@ -1,6 +1,7 @@
 # USS-MONITOR dotfiles
 These are the dotfiles for my laptop running Arch Linux. They are pretty much identical to my desktop dotfiles, except much simpler. For instance, there is only one wallpaper and only one theme. The laptop typically only has one monitor. This means that overall the stow packages, hyprland keybinds, and other things are much simpler.
 ## Tree and Organization
+
 .dotfiles
 ├── hyprland
 │   └── .config
@@ -21,6 +22,7 @@ These are the dotfiles for my laptop running Arch Linux. They are pretty much id
 │               ├── keymaps.lua
 │               ├── lsp.lua
 │               └── plugins.lua
+├── README.md
 ├── scripts
 │   ├── ufw.sh
 │   ├── waybar_auto_hide
