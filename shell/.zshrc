@@ -14,6 +14,12 @@ export EDITOR="/usr/bin/nvim"
 export VISUAL="$EDITOR"
 export GOPATH=$HOME/.go
 [ -f "/home/kawiggles/.ghcup/env" ] && . "/home/kawiggles/.ghcup/env" # ghcup-env
+if [ -d "/var/lib/flatpak/exports/share" ]; then
+    export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
+fi
+if [ -d "$HOME/.local/share/flatpak/exports/share" ]; then
+    export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
+fi
 
 alias matrix="~/Programming/Small\\ Projects/Learning\\ Bash/matrix.sh"
 alias cmatrix="~/Programming/Community\\ Projects/cmatrix/build/cmatrix"
@@ -27,10 +33,10 @@ alias hypr="start-hyprland"
 alias cbake="cmake --build ."
 alias cr="cargo run"
 alias cb="cargo build"
-alias cc="cargo check"
+alias ct="cargo test"
 alias gr="go run"
 alias gb="go build"
-alias gc="go test"
+alias gt="go test"
 
 alias gitlines="git ls-files | xargs wc -l"
 alias vm="virt-viewer -c qemu+ssh://kawiggles@whydah-gally/system windows"

@@ -6,11 +6,11 @@ local mainMod   = "SUPER"
 
 local terminal  = "kitty"
 local browser   = "firefox"
-local discord   = "discord"
+local discord   = "flatpak run com.discordapp.Discord"
 local steam     = "steam"
 local launcher  = "hyprlauncher"
-local spotify   = "spotify"
-local trilium   = "triliumnext"
+local spotify   = "flatpak run com.spotify.Client"
+local trilium   = "flatpak run com.triliumnext.notes"
 local mail      = "thunderbird"
 
 --------------------------
