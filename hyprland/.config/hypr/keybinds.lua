@@ -6,11 +6,11 @@ local mainMod   = "SUPER"
 
 local terminal  = "kitty"
 local browser   = "firefox"
-local discord   = "discord"
+local discord   = "flatpak run com.discordapp.Discord"
 local steam     = "steam"
 local launcher  = "hyprlauncher"
-local spotify   = "spotify"
-local trilium   = "triliumnext"
+local spotify   = "flatpak run com.spotify.Client"
+local trilium   = "flatpak run com.triliumnext.notes"
 local mail      = "thunderbird"
 
 --------------------------
@@ -55,7 +55,7 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 ---- NAVIGATION KEYBINDS ----
 -----------------------------
 
---- Move focus with ,./; ---
+--- Move focus with HLKJ, like vim ---
 hl.bind(mainMod .. " + H",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K",    hl.dsp.focus({ direction = "up" }))
@@ -72,6 +72,7 @@ end
 -- Scroll through existing workspaces
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + SHIFT + H",   hl.dsp.focus({ workspace = "e-1" }))
+hl.bind("ALT + Tab", hl.dsp.focus({ workspace = "previous" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
