@@ -35,10 +35,12 @@ alias cr="cargo run"
 alias cb="cargo build"
 alias ct="cargo test"
 alias gr="go run"
-alias gb="go build"
+alias gb="go build -o bin/\$(basename \"\$PWD\")"
 alias gt="go test"
 
 alias gitlines="git ls-files | xargs wc -l"
+alias rustlines="git ls-files | xargs wc -l | grep '\.rs$' | awk '{sum += \$1} END {print sum}'"
+alias golines="git ls-files | xargs wc -l | grep '\.go$' | awk '{sum += \$1} END {print sum}'"
 alias vm="virt-viewer -c qemu+ssh://kawiggles@whydah-gally/system windows"
 
 # Startup commands
