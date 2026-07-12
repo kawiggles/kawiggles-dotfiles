@@ -73,7 +73,7 @@
         "memory": { "format": "RAM: {}%" },
         "clock": {
             "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-            "format-alt": "{:%m-%d-%Y}"
+            "format": "{:%d - %H:%M}"
         }
     }
 ]

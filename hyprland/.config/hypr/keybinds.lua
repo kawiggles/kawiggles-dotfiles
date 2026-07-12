@@ -25,7 +25,6 @@ hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(trilium))
 
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("kitty -e yazi"))
 
 --------------------------
 ---- CONTROL KEYBINDS ----
@@ -65,7 +64,9 @@ hl.bind(mainMod .. " + J",  hl.dsp.focus({ direction = "down" }))
 --- Move active window to a workspace with mainMod + SHIFT + [0-9] ---
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
+    local np_key = "KP_" .. key
     hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
+    hl.bind(mainMod .. "+" .. np_key,          hl.dsp.focus({ workspace = i}))
     hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
 end
 

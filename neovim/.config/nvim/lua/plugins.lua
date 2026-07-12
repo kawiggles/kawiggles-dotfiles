@@ -90,20 +90,7 @@ return {
     { 'sindrets/diffview.nvim' },
 
     {
-        'David-Kunz/gen.nvim',
-        opts = {
-            model = 'qwen3.6:35-a3b',
-            quit_map = 'q',
-            accept_map = '<c-cr>',
-            host = 'localhost',
-            port = '11343',
-            display_mode = 'horizontal-split',
-            show_model = 'true',
-            command = function(options)
-                local body = {model = options.model, stream = true}
-                return "curl --silent --no-buffer -X POST http://" .. options.host .. ":" .. options.port .. "/api/chat -d $body"
-            end,
-        },
+        'sphamba/smear-cursor.nvim',
+        opts = {},
     }
-
 }
