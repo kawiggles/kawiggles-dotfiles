@@ -81,7 +81,7 @@ return {
     { 'sindrets/diffview.nvim' },
 
     {
-        'sphamba/smear-cursor',
+        'sphamba/smear-cursor.nvim',
         opts = {},
     },
 }
