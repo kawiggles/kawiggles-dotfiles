@@ -10,6 +10,7 @@ if [ "$CURRENT" == "space" ]; then
 
     ln -sf ~/.dotfiles/themes/bierstadt/theme.lua ~/.config/nvim/lua/theme.lua
     ln -sf ~/.dotfiles/themes/bierstadt/theme.toml ~/.config/alacritty/theme.toml
+    touch ~/.config/alacritty/alacritty.toml
     ln -sf ~/.dotfiles/themes/bierstadt/style.css ~/.config/waybar/style.css
 
     pkill -SIGUSR1 kitty
@@ -24,6 +25,7 @@ elif [ "$CURRENT" == "bierstadt" ]; then
 
     ln -sf ~/.dotfiles/themes/space/theme.lua ~/.config/nvim/lua/theme.lua
     ln -sf ~/.dotfiles/themes/space/theme.toml ~/.config/alacritty/theme.toml
+    touch ~/.config/alacritty/alacritty.toml
     ln -sf ~/.dotfiles/themes/space/style.css ~/.config/waybar/style.css
 
     pkill -SIGUSR1 kitty
