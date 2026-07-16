@@ -4,7 +4,7 @@
 
 local mainMod   = "SUPER"
 
-local terminal  = "kitty"
+local terminal  = "alacritty"
 local browser   = "firefox"
 local discord   = "flatpak run com.discordapp.Discord"
 local steam     = "steam"

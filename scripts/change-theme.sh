@@ -9,7 +9,7 @@ if [ "$CURRENT" == "space" ]; then
     hyprctl hyprpaper wallpaper "DP-7, $HOME/.dotfiles/themes/wallpapers/Albert_Bierstadt_-_Yellowstone_Falls.jpg"
 
     ln -sf ~/.dotfiles/themes/bierstadt/theme.lua ~/.config/nvim/lua/theme.lua
-    ln -sf ~/.dotfiles/themes/bierstadt/current-theme.conf ~/.config/kitty/current-theme.conf
+    ln -sf ~/.dotfiles/themes/bierstadt/theme.toml ~/.config/alacritty/theme.toml
     ln -sf ~/.dotfiles/themes/bierstadt/style.css ~/.config/waybar/style.css
 
     pkill -SIGUSR1 kitty
@@ -23,7 +23,7 @@ elif [ "$CURRENT" == "bierstadt" ]; then
     hyprctl hyprpaper wallpaper "DP-7, $HOME/.dotfiles/themes/wallpapers/The_Space_Mural.jpg"
 
     ln -sf ~/.dotfiles/themes/space/theme.lua ~/.config/nvim/lua/theme.lua
-    ln -sf ~/.dotfiles/themes/space/current-theme.conf ~/.config/kitty/current-theme.conf
+    ln -sf ~/.dotfiles/themes/space/theme.toml ~/.config/alacritty/theme.toml
     ln -sf ~/.dotfiles/themes/space/style.css ~/.config/waybar/style.css
 
     pkill -SIGUSR1 kitty
