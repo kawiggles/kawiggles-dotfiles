@@ -15,10 +15,18 @@ require('lsp')
 require('keymaps')
 require('theme')
 
-vim.cmd('source ~/.vimrc')
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.colorcolumn = "100"
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.termguicolors = true
+
+vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "markdown", "gitcommit" },

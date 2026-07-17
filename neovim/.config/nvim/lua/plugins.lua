@@ -31,13 +31,6 @@ return {
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
-        config = function()
-            vim.treesitter.language.register('c', 'c')
-            vim.treesitter.language.register('cpp', 'cpp')
-            vim.treesitter.language.register('c_sharp', 'c_sharp')
-            vim.treesitter.language.register('haskell', 'haskell')
-            vim.treesitter.language.register('python', 'python')
-        end,
     },
 
     { 'catppuccin/nvim', name = 'catppuccin' },
