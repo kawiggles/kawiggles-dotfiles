@@ -33,8 +33,6 @@ return {
         build = ':TSUpdate',
     },
 
-    { 'catppuccin/nvim', name = 'catppuccin' },
-
     { "EdenEast/nightfox.nvim", name = 'nightfox' },
 
     {
