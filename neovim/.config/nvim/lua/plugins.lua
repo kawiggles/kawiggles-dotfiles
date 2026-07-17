@@ -28,20 +28,10 @@ return {
         end,
     },
 
-   {
+    {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
-        config = function()
-            vim.treesitter.language.register('c', 'c')
-            vim.treesitter.language.register('cpp', 'cpp')
-            vim.treesitter.language.register('c_sharp', 'c_sharp')
-            vim.treesitter.language.register('haskell', 'haskell')
-            vim.treesitter.language.register('python', 'python')
-            vim.treesitter.language.register('go', 'go')
-        end,
     },
-
-    { 'catppuccin/nvim', name = 'catppuccin' },
 
     { 'nvimdev/oceanic-material', name = 'oceanic-material' },
 
