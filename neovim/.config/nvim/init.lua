@@ -19,3 +19,5 @@ vim.cmd.colorscheme("oceanic_material")
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.colorcolumn = "100"
+vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
