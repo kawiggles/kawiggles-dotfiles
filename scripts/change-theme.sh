@@ -3,7 +3,7 @@
 STATE_FILE="$HOME/.config/theme-state"
 CURRENT=$(cat "$STATE_FILE" 2>/dev/null || echo bierstadt)
 
-if [ "$CURRENT" == "space" ]; then
+if [ "$CURRENT" == "aivazovski" ]; then
     # hyprctl dispatch 'hl.dsp.window.set_prop({ prop = "active_border_color", value = "rgba(44d9bf5ff) rgba(1a3a5cff) 45", window = "class:.*"})'
     hyprctl hyprpaper wallpaper "DP-6, $HOME/.dotfiles/themes/wallpapers/Albert_Bierstadt_-_A_Storm_in_the_Rocky_Mountains_Mt._Rosalie.jpg"
     hyprctl hyprpaper wallpaper "DP-7, $HOME/.dotfiles/themes/wallpapers/Albert_Bierstadt_-_Yellowstone_Falls.jpg"
@@ -23,15 +23,28 @@ elif [ "$CURRENT" == "bierstadt" ]; then
     hyprctl hyprpaper wallpaper "DP-6, $HOME/.dotfiles/themes/wallpapers/Apollo_Soyuz_Handshake.jpg, fill"
     hyprctl hyprpaper wallpaper "DP-7, $HOME/.dotfiles/themes/wallpapers/The_Space_Mural.jpg"
 
-    ln -sf ~/.dotfiles/themes/space/theme.lua ~/.config/nvim/lua/theme.lua
-    ln -sf ~/.dotfiles/themes/space/theme.toml ~/.config/alacritty/theme.toml
+    ln -sf ~/.dotfiles/themes/mccall/theme.lua ~/.config/nvim/lua/theme.lua
+    ln -sf ~/.dotfiles/themes/mccall/theme.toml ~/.config/alacritty/theme.toml
     touch ~/.config/alacritty/alacritty.toml
-    ln -sf ~/.dotfiles/themes/space/style.css ~/.config/waybar/style.css
+    ln -sf ~/.dotfiles/themes/mccall/style.css ~/.config/waybar/style.css
 
     pkill -SIGUSR1 kitty
     pkill waybar; waybar > /dev/null 2>&1 &
     $HOME/.dotfiles/scripts/waybar_scripts/waybar_auto_hide &
-    echo space > $STATE_FILE
+    echo mcall > $STATE_FILE
+elif [ "$CURRENT" == "mcall" ]; then
+    hyprctl hyprpaper wallpaper "DP-6, $HOME/.dotfiles/themes/wallpapers/Ship_at_anchor_in_calm_waters.jpg, fill"
+    hyprctl hyprpaper wallpaper "DP-7, $HOME/.dotfiles/themes/wallpapers/The_Ninth_Wave.jpg"
+
+    ln -sf ~/.dotfiles/themes/mccall/theme.lua ~/.config/nvim/lua/theme.lua
+    ln -sf ~/.dotfiles/themes/mccall/theme.toml ~/.config/alacritty/theme.toml
+    touch ~/.config/alacritty/alacritty.toml
+    ln -sf ~/.dotfiles/themes/mccall/style.css ~/.config/waybar/style.css
+
+    pkill -SIGUSR1 kitty
+    pkill waybar; waybar > /dev/null 2>&1 &
+    $HOME/.dotfiles/scripts/waybar_scripts/waybar_auto_hide &
+    echo aivazovski > $STATE_FILE
 fi
 
 

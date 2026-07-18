@@ -1,0 +1,163 @@
+/* bierstadt colors */
+@define-color bg #dfdad9;
+@define-color bg1 #282828;
+@define-color bg2 #32302f;
+@define-color bg3 #3c3836;
+@define-color fg #575279;
+@define-color red #b4637a;
+@define-color green #286983;
+@define-color yellow #ea9d34;
+@define-color blue #56949f;
+@define-color purple #907aa9;
+@define-color aqua #d7827e;
+@define-color orange #b4637a;
+
+* {
+    font-family: EnvyCodRNFM, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
+    margin-bottom: -5px;
+    padding: 0;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    padding: 0px 5px;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces {
+    margin-bottom: 0px;
+}
+    
+#workspaces button {
+    margin: 10px 5px 5px 0;
+    background-color: @bg;
+    color: @fg;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused, #workspaces button.active {
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+}
+
+#keyboard-state,
+#pulseaudio,
+#tray {
+    padding: 0 10px;
+    color: @fg;
+    margin: 10px 5px 5px 0;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+#clock,
+#custom-gpu,
+#custom-cpu,
+#custom-spotify,
+#memory {
+    padding: 0 10px;
+    color: #000000;
+    margin: 10px 5px 5px 0;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+#custom-spotify {
+    background-color:#1db954;
+}
+
+#clock {
+    margin-right: 10px;
+    background-color: @aqua;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#custom-cpu {
+    background-color: @red;
+}
+
+#custom-gpu {
+    background-color: @green;
+}
+
+#memory {
+    background-color: @purple;
+}
+
+#pulseaudio {
+    background-color: @yellow;
+    color: #000000;
+}
+
+#pulseaudio.muted {
+    background-color: @blue;
+    color: #2a5c45;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#tray { 
+    margin-left: 10px;
+    background-color: @blue; 
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#keyboard-state {
+    background: @orange;
+    color: #000000;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}

@@ -45,6 +45,8 @@ return {
         end
     },
 
+    { 'rose-pine/neovim', name = 'rose-pine' },
+
     {
         'nvim-telescope/telescope.nvim', version = '*',
         dependencies = {
