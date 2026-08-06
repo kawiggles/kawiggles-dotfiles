@@ -12,7 +12,6 @@ export SSH_AUTH_SOCK=/temp/ssh-agent.sock
 export EDITOR="/usr/bin/nvim"
 export VISUAL="$EDITOR"
 export GOPATH="$HOME/.go"
-export PROMPT="%F{cyan}%n@%m%f %~%# "
 [ -f "/home/kawiggles/.ghcup/env" ] && . "/home/kawiggles/.ghcup/env" # ghcup-env
 
 # Aliases to make life easier
@@ -32,6 +31,11 @@ alias gc="go test"
 alias gitlines="git ls-files | xargs wc -l"
 alias vm="virt-viewer -c qemu+ssh://kawiggles@whydah-gally/system windows"
 
+nvif() {
+    local file
+    file=$(fzf --query="$1") && [ -n "$file" ] && nvim "$file"
+}
+
 # Startup commands
 cd ~
 fastfetch
@@ -39,6 +43,7 @@ eval $(keychain --eval uss-monitor-key)
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
+eval "$(starship init zsh)"
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
