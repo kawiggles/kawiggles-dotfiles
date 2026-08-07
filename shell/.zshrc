@@ -9,7 +9,6 @@ SAVEHIST=1000
 
 # Environmental variables
 export SSH_AUTH_SOCK=/temp/ssh-agent.sock
-export PROMPT="%F{cyan}%n@%m%f %~%# "
 export EDITOR="/usr/bin/nvim"
 export VISUAL="$EDITOR"
 export GOPATH=$HOME/.go
@@ -43,6 +42,11 @@ alias rustlines="git ls-files | xargs wc -l | grep '\.rs$' | awk '{sum += \$1} E
 alias golines="git ls-files | xargs wc -l | grep '\.go$' | awk '{sum += \$1} END {print sum}'"
 alias vm="virt-viewer -c qemu+ssh://kawiggles@whydah-gally/system windows"
 
+nvif() {
+    local file
+    file=$(fzf --query="$1") && [ -n "$file" ] && nvim "$file"
+}
+
 # Startup commands
 cd ~
 fastfetch
@@ -50,6 +54,7 @@ eval $(keychain --eval yamato-key)
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
+eval "$(starship init zsh)"
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

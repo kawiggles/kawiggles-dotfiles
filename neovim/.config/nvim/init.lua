@@ -25,9 +25,6 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.termguicolors = true
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "markdown", "gitcommit" },
     callback = function ()
