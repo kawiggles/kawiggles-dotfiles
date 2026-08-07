@@ -12,6 +12,7 @@ export SSH_AUTH_SOCK=/temp/ssh-agent.sock
 export EDITOR="/usr/bin/nvim"
 export VISUAL="$EDITOR"
 export GOPATH=$HOME/.go
+export PATH="$PATH:/$HOME/.cargo/bin"
 [ -f "/home/kawiggles/.ghcup/env" ] && . "/home/kawiggles/.ghcup/env" # ghcup-env
 if [ -d "/var/lib/flatpak/exports/share" ]; then
     export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"

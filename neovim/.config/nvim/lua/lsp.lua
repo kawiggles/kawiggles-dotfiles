@@ -61,6 +61,13 @@ vim.lsp.config['rust-analyzer'] = {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 
+vim.lsp.config['zls'] = {
+    cmd = { 'zls' },
+    filetypes = { 'zig', 'zon' },
+    root_markers = { 'build.zig', 'zls.json', '.git' },
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+}
+
 vim.lsp.enable('clangd')
 vim.lsp.enable('hls')
 vim.lsp.enable('luals')
