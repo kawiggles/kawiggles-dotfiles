@@ -63,3 +63,8 @@ source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.zsh
 
 # Keybinds
 bindkey '^[[Z' autosuggest-accept
+
+# ZVM
+export ZVM_INSTALL="$HOME/.zvm/self"
+export PATH="$PATH:$HOME/.zvm/bin"
+export PATH="$PATH:$ZVM_INSTALL/"

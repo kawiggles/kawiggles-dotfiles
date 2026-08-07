@@ -35,18 +35,6 @@ vim.lsp.config['pyright'] = {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 
-vim.lsp.config['tsserver'] = {
-    cmd = { 'typescript-language-server', '--stdio' },
-    filetypes = {
-        'javascript',
-        'javascriptreact',
-        'typescript',
-        'typescriptreact'
-    },
-    root_markers = { 'tsconfig.json', 'jsconfig.json', 'package.json', '.git' },
-    single_file_support = true,
-}
-
 vim.lsp.config['gopls'] = {
     cmd = { 'gopls' },
     filetypes = { 'go' },
@@ -63,7 +51,7 @@ vim.lsp.config['rust-analyzer'] = {
 
 vim.lsp.config['zls'] = {
     cmd = { 'zls' },
-    filetypes = { 'zig', 'zon' },
+    filetypes = { 'zig' },
     root_markers = { 'build.zig', 'zls.json', '.git' },
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
@@ -72,6 +60,6 @@ vim.lsp.enable('clangd')
 vim.lsp.enable('hls')
 vim.lsp.enable('luals')
 vim.lsp.enable('pyright')
-vim.lsp.enable('tsserver')
 vim.lsp.enable('gopls')
 vim.lsp.enable('rust-analyzer')
+vim.lsp.enable('zls')
