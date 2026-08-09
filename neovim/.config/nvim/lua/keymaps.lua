@@ -6,6 +6,7 @@ end)
 vim.keymap.set('n', '<leader>fg', function()
     require('telescope.builtin').live_grep()
 end)
+vim.keymap.set('n', '<leader>r', ':%s/<C-r><C-w>/')
 
 --- These are for not having to enter insert mode for newlines and single characters
 vim.keymap.set('n', '<leader><space>', 'i<Space><Esc>', {noremap = true})
