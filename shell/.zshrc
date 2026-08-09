@@ -37,11 +37,15 @@ alias ct="cargo test"
 alias gr="go run"
 alias gb="go build -o bin/\$(basename \"\$PWD\")"
 alias gt="go test"
+alias zb="zig build"
 
 alias gitlines="git ls-files | xargs wc -l"
 alias rustlines="git ls-files | xargs wc -l | grep '\.rs$' | awk '{sum += \$1} END {print sum}'"
 alias golines="git ls-files | xargs wc -l | grep '\.go$' | awk '{sum += \$1} END {print sum}'"
 alias vm="virt-viewer -c qemu+ssh://kawiggles@whydah-gally/system windows"
+
+alias cool="hyprctl hyprsunset identity"
+alias warm="hyprctl hyprsunset temperature 4500"
 
 nvif() {
     local file

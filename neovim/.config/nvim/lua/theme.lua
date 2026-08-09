@@ -1,1 +1,1 @@
-/home/kawiggles/.dotfiles/themes/bierstadt/theme.lua
+/home/kawiggles/.dotfiles/themes/mccall/theme.lua
