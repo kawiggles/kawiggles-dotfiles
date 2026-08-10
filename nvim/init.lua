@@ -21,13 +21,19 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.smartindent = true
 
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "markdown", "gitcommit" },
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = { 'markdown', 'gitcommit' },
 	callback = function()
 		vim.opt_local.spell = true
-		vim.opt_loacl.spelllang = "en_us"
+		vim.opt_loacl.spelllang = 'en_us'
 	end,
 })
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+
+vim.env.PATH = vim.env.PATH .. ';C:\\Program Files\\PowerShell\\7\\pwsh.exe'
+vim.lsp.config('powershell_es', {
+	bundle_path = 'C:/Users/kawika.dembroski/AppData/Local/nvim-data/mason/packages/powershell-editor-services',
+})
+vim.lsp.enable('powershell_es')
