@@ -4,7 +4,7 @@ function prompt {
 		$path = "~"
 	}
 
-	"`e[33mkawiggles@uss-yorktown`e[0m $path > "
+	"`e[33mkawiggles@uss-lexington`e[0m $path > "
 }
 
 function ll {
@@ -34,15 +34,20 @@ Set-PSReadLineOption -Colors @{
 	"Parameter"	= "Yellow"
 	"String"	= "Green"
 	"Variable"	= "Blue"
-	"Operator"	= "DarkYellow"
+	"Operator"	= "Yellow"
 	"Default"	= "White"
 }
 
 & fastfetch
 & "C:\Scripts\load_env.ps1"
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
+Import-Module ActiveDirectory
+Import-Module Microsoft.Online.SharePoint.PowerShell
 Import-Module "C:\Scripts\ADTools\ADTools.psm1" -Force
 Import-Module "C:\Scripts\AssetManagerTools\AssetManagerTools.psm1" -Force
+
+Set-PSReadLineOption -PredictionSource HistoryAndPlugin
+Set-PSReadLineOption -PredictionViewStyle ListView
 
 function Set-AssetHeaders {
     return @{
