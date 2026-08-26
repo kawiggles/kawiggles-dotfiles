@@ -1,6 +1,10 @@
 function prompt {
 	$path = Split-Path -Leaf -Path (Get-Location)
-	"$path> "
+	if ((Get-Location).Path -eq $HOME) {
+		$path = "~"
+	}
+
+	"`e[33mkawiggles@uss-yorktown`e[0m $path > "
 }
 
 function ll {
@@ -26,11 +30,11 @@ function nvif {
 }
 
 Set-PSReadLineOption -Colors @{
-	"Command"	= "Yellow"
-	"Parameter"	= "Blue"
-	"String"	= "Cyan"
-	"Variable"	= "Red"
-	"Operator"	= "Red"
+	"Command"	= "Red"
+	"Parameter"	= "Yellow"
+	"String"	= "Green"
+	"Variable"	= "Blue"
+	"Operator"	= "DarkYellow"
 	"Default"	= "White"
 }
 
@@ -47,4 +51,18 @@ function Set-AssetHeaders {
         "Accept" = "application/json"
         "User-Agent" = "Kawikas CLI Scripts"
     }
+}
+
+function Get-DiskUsage {
+	Get-ChildItem -Recurse -File . |
+	Group-Object DirectoryName |
+	ForEach-Object {
+		[PSCustomObject]@{
+			Name = $_.Name
+			SizeMB = [math]::Round(
+				(($_.Group | Measure-Object Length -Sum).Sum / 1MB), 2
+			)
+		}
+	}
+	Sort-Object SizeMB
 }

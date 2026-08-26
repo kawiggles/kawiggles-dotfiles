@@ -29,8 +29,18 @@ vim.api.nvim_create_autocmd('FileType', {
 	end,
 })
 
+vim.api.nvim_create_autocmd('LspAttach', {
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		if client and client.name == "powershell_es" then
+			client.server_capabilities.semanticTokensProvider = nil
+		end
+	end,
+})
+
 vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, "@variable", { fg = '#7fbbb3' })
 
 vim.env.PATH = vim.env.PATH .. ';C:\\Program Files\\PowerShell\\7\\pwsh.exe'
 vim.lsp.config('powershell_es', {
