@@ -5,6 +5,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
+export SSH_AUTH_SOCK=/temp/ssh-agent.sock
 export EDITOR="/usr/bin/vim"
 
 alias ..="cd .."
@@ -18,6 +19,7 @@ nvif() {
 
 cd ~
 fastfetch
+eval "$(keychain --eval great-eastern-key)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
@@ -26,5 +28,4 @@ eval "$(starship init zsh)"
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-bindkey -v
 bindkey '^[[Z' autosuggest-accept
