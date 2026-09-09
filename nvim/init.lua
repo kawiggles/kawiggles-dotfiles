@@ -47,3 +47,4 @@ vim.lsp.config('powershell_es', {
 	bundle_path = 'C:/Users/kawika.dembroski/AppData/Local/nvim-data/mason/packages/powershell-editor-services',
 })
 vim.lsp.enable('powershell_es')
+vim.lsp.enable('gopls')
