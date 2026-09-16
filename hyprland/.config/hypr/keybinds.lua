@@ -34,6 +34,8 @@ hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.window.set_prop({ prop = "opaque", value = "toggle" }))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -m output"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m window"))
+hl.bind(mainMod .. " + CONTROL + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
+hl.bind(mainMod .. " + CONTROL + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("$HOME/.dotfiles/scripts/change-theme.sh"))
 
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd(launcher))
