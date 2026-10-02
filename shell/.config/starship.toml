@@ -18,8 +18,8 @@ format = "[$ssh_symbol$hostname](bold cyan)"
 disabled = false
 
 [character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
+success_symbol = "[%](bold green)"
+error_symbol = "[%](bold red)"
 
 [directory]
 format = " [$path](bold dimmed blue)[$read_only](bold red)"

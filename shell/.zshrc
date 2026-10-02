@@ -27,6 +27,7 @@ alias ct="cargo test"
 alias gr="go run"
 alias gb="go build"
 alias gc="go test"
+alias zb="zig build"
 
 alias gitlines="git ls-files | xargs wc -l"
 alias vm="virt-viewer -c qemu+ssh://kawiggles@whydah-gally/system windows"
@@ -51,3 +52,10 @@ source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.zsh
 
 # Keybinds
 bindkey '^[[Z' autosuggest-accept
+
+# ZVM
+export ZVM_INSTALL="$HOME/.zvm/self"
+if [ -d "$ZVM_INSTALL" ]; then
+  export PATH="$PATH:$HOME/.zvm/bin"
+  export PATH="$PATH:$ZVM_INSTALL"
+fi

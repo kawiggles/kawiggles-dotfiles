@@ -38,7 +38,7 @@ hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -m window"))
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd(launcher))
 hl.bind(mainMod .. " + semicolon", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + semicolon", hl.dsp.window.kill())
-hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + ALT + CONTROL + SHIFT + L", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
