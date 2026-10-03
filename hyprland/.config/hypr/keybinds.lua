@@ -41,7 +41,7 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("$HOME/.dotfiles/scripts/change-theme
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd(launcher))
 hl.bind(mainMod .. " + semicolon", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + semicolon", hl.dsp.window.kill())
-hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + ALT + CONTROL + SHIFT + L", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
@@ -73,8 +73,8 @@ for i = 1, 10 do
 end
 
 -- Scroll through existing workspaces
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + SHIFT + H",   hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + ALT + L", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + ALT + H",   hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })

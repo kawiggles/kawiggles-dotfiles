@@ -26,7 +26,7 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "markdown", "gitcommit" },
+    pattern = { "html", "gotmpl", "gohtmltmpl", "markdown", "gitcommit", "text" },
     callback = function ()
         vim.opt_local.spell = true
         vim.opt_local.spelllang = "en_us"
