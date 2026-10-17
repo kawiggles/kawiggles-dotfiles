@@ -30,6 +30,7 @@ alias ..="cd .."
 alias ls="ls --color=auto --group-directories-first"
 alias ll="ls -lah --color=auto --group-directories-first"
 alias hypr="start-hyprland"
+alias sd="shutdown now"
 alias kp="kolourpaint"
 
 alias cbake="cmake --build ."
