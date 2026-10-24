@@ -70,8 +70,8 @@ for i = 1, 10 do
 end
 
 -- Scroll through existing workspaces
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + SHIFT + H",   hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + ALT + L", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + ALT + H",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind("ALT + Tab", hl.dsp.focus({ workspace = "previous" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
