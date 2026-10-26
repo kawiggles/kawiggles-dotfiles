@@ -18,6 +18,9 @@ vim.keymap.set('n', '<leader>ie', 'oif err != nil {<CR>}<Esc>O')
 --- let mut ---
 vim.keymap.set('n', '<leader>lm', 'olet mut ')
 
+--- {  } ---
+vim.keymap.set('n', '<leader>t', 'a {<CR>}<Esc>O')
+
 --- These are for not having to enter insert mode for newlines and single characters
 vim.keymap.set('n', '<leader><space>', 'i<Space><Esc>', {noremap = true})
 vim.keymap.set('n', '<leader>i', function()

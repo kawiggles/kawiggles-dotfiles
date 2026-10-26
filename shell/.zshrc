@@ -32,6 +32,7 @@ alias ll="ls -lah --color=auto --group-directories-first"
 alias hypr="start-hyprland"
 alias sd="shutdown now"
 alias kp="kolourpaint"
+alias vibe="claude --settings ~/.claude/vibe.settings.json"
 
 alias cbake="cmake --build ."
 alias cr="cargo run"
