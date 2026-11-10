@@ -21,14 +21,6 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.smartindent = true
 
-vim.api.nvim_create_autocmd('FileType', {
-	pattern = { 'markdown', 'gitcommit' },
-	callback = function()
-		vim.opt_local.spell = true
-		vim.opt_loacl.spelllang = 'en_us'
-	end,
-})
-
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(args)
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
